@@ -272,6 +272,27 @@
 
     if (!tabs.length) return;
 
+    var isMobile = window.innerWidth <= 767;
+
+    function updateCourseCards(filter) {
+      cards.forEach(function (card) {
+        var cat   = card.getAttribute('data-category');
+        var isCta = card.classList.contains('ri-course-card--cta');
+        var show  = filter === 'all' || isCta || cat === filter;
+        card.style.display = show ? 'flex' : 'none';
+      });
+    }
+
+    /* On mobile default to Nursing so the section isn’t blank */
+    if (isMobile) {
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      var nursingTab = document.querySelector('.ri-tab[data-filter="nursing"]');
+      if (nursingTab) {
+        nursingTab.classList.add('active');
+        updateCourseCards('nursing');
+      }
+    }
+
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
         var filter = tab.getAttribute('data-filter');
@@ -279,15 +300,7 @@
         tabs.forEach(function (t) { t.classList.remove('active'); });
         tab.classList.add('active');
 
-        cards.forEach(function (card) {
-          var cat = card.getAttribute('data-category');
-          var isCta = card.classList.contains('ri-course-card--cta');
-          if (filter === 'all' || isCta || cat === filter) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+        updateCourseCards(filter);
       });
     });
   }

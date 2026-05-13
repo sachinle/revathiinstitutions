@@ -33,7 +33,7 @@
 /* ─── RESET & BASE ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
@@ -290,6 +290,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 28px;
+  
 }
 .ri-nav-links a {
   font-family: 'Nunito Sans', sans-serif;
@@ -297,6 +298,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: var(--ri-navy);
   position: relative;
+  text-decoration: none;
 }
 .ri-nav-links a:not(.ri-btn-apply)::after {
   content: '';
@@ -1281,9 +1283,25 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 767.98px) {
   /* nav inner padding comes from the locked fluid container */
   .ri-hamburger { display: flex; flex-shrink: 0; }
-  .ri-logo-wrap { flex-shrink: 1; min-width: 0; max-width: calc(100% - 60px); overflow: hidden; }
-  .ri-logo-wrap img { max-height: 40px; max-width: 100%; width: auto; }
-  .ri-logo-placeholder { padding: 4px 0 4px 10px; font-size: 13px; }
+  .ri-logo-wrap {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: calc(100vw - 80px);
+    overflow: hidden;
+  }
+  .ri-logo-placeholder {
+    padding: 0;
+    border-left: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .ri-logo-wrap img { max-height: 36px; max-width: 180px; width: auto; display: block; }
+
+  /* hide all course cards on mobile — tabs reveal them */
+  #coursesGrid .ri-course-card { display: none; }
+  /* hide the All tab button on mobile and prevent All content from appearing */
+  .ri-course-tabs .ri-tab[data-filter="all"] { display: none; }
   .ri-nav-links {
     display: none;
     position: absolute;
