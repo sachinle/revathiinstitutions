@@ -40,7 +40,7 @@
         <a href="#campus">Campus</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
-        <a href="#apply" class="ri-btn-apply">Apply Now</a>
+        <a href="#admissionFormContainer" class="ri-btn-apply">Apply Now</a>
       </div>
     </div>
   </nav>
@@ -130,10 +130,8 @@
         <div class="col-12 col-lg-7" data-animate="fadeRight">
           <div class="ri-about-visual">
             <!-- ABOUT IMAGE PLACEHOLDER — 580×420px recommended -->
-            <div class="ri-img-placeholder ri-about-img">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#00b9ae" stroke-width="1.5"/><path d="M8.5 11.5l2.5 2.5 4-4" stroke="#00b9ae" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <span>About Image (580 × 420 px)</span>
-            </div>
+             <img src="./images/about/about.jpg" style="border-radius: 25px;" alt="Revathi Institutions Campus">
+           
             <!-- Floating stat card -->
             <div class="ri-float-card ri-float-card--1">
               <span class="ri-float-num">14+</span>
@@ -278,24 +276,33 @@
         </div>
       </div>
 
-      <div class="ri-courses-grid">
+      <!-- Category Tabs -->
+      <div class="ri-course-tabs" id="courseTabs">
+        <button class="ri-tab active" data-filter="all">All</button>
+        <button class="ri-tab" data-filter="nursing">Nursing</button>
+        <button class="ri-tab" data-filter="paramedical">Paramedical</button>
+        <button class="ri-tab" data-filter="physiotherapy">Physiotherapy</button>
+        <button class="ri-tab" data-filter="occupational-therapy">Occupational Therapy</button>
+        <button class="ri-tab" data-filter="management">Management</button>
+      </div>
 
-        <div class="ri-course-card" data-animate="fadeUp">
-          <!-- COURSE IMAGE 1 — 320×200px recommended -->
+      <div class="ri-courses-grid" id="coursesGrid">
+
+        <div class="ri-course-card" data-category="physiotherapy" data-animate="fadeUp">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
-              <span>Course Image (320 × 200 px)</span>
+             <img src="./images/courses/Physiotherapy.jpg" alt="">
             </div>
           </div>
           <div class="ri-course-info">
             <span class="ri-course-tag">Physiotherapy</span>
             <h5>BPT – Bachelor of Physiotherapy</h5>
             <p>Start a rewarding career in Physiotherapy and help rebuild people's lives.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="100">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp" data-delay="100">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -305,11 +312,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Critical Care Technology</h5>
             <p>Become a Critical Care Technologist and help patients get out of critical conditions.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="200">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp" data-delay="200">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -319,11 +326,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Physician Assistant</h5>
             <p>Become a skilled Physician Assistant that can work in any clinical setting.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="300">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp" data-delay="300">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -333,11 +340,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Perfusion Technology</h5>
             <p>Become a Perfusionist and be a part of expert surgical teams.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="400">
+        <div class="ri-course-card" data-category="nursing" data-animate="fadeUp" data-delay="400">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -347,11 +354,11 @@
             <span class="ri-course-tag">Nursing</span>
             <h5>B.Sc. Nursing</h5>
             <p>Build a compassionate, skilled nursing career with world-class clinical training.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp">
+        <div class="ri-course-card" data-category="nursing" data-animate="fadeUp">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -361,11 +368,11 @@
             <span class="ri-course-tag">Nursing</span>
             <h5>M.Sc. Nursing</h5>
             <p>Advance your nursing expertise with specialised postgraduate clinical training.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="100">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp" data-delay="100">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -375,11 +382,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Respiratory Therapy</h5>
             <p>Master respiratory care and help patients breathe easier in critical conditions.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="200">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp" data-delay="200">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -389,11 +396,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Optometry</h5>
             <p>Become an eye care professional and help people see the world more clearly.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="300">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp" data-delay="300">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -403,11 +410,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Radiography &amp; Imaging</h5>
             <p>Train in X-ray, CT and MRI imaging — a vital pillar of every diagnostic team.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -417,11 +424,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Clinical Nutrition</h5>
             <p>Guide patients to better health through evidence-based clinical nutrition.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="100">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp" data-delay="100">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -431,11 +438,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Operation Theater &amp; Anesthesia Tech</h5>
             <p>Support surgical teams in life-saving procedures as an OT &amp; anesthesia technologist.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="200">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp" data-delay="200">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -445,11 +452,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. AECT</h5>
             <p>Frontline expertise in Anesthesia &amp; Emergency Care — where seconds matter.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="300">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp" data-delay="300">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -459,11 +466,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Dialysis Tech</h5>
             <p>Provide critical care for patients with kidney disorders as a dialysis technologist.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -473,11 +480,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Medical Lab Tech</h5>
             <p>Become the backbone of accurate diagnosis as a medical lab technologist.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="100">
+        <div class="ri-course-card" data-category="paramedical" data-animate="fadeUp" data-delay="100">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -487,11 +494,11 @@
             <span class="ri-course-tag">Paramedical</span>
             <h5>B.Sc. Cardiac Tech</h5>
             <p>Specialise in cardiac care and support cardiologists in life-saving heart procedures.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="200">
+        <div class="ri-course-card" data-category="management" data-animate="fadeUp" data-delay="200">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -501,11 +508,11 @@
             <span class="ri-course-tag">Management</span>
             <h5>Master of Hospital Administration</h5>
             <p>Lead modern healthcare institutions with a postgraduate degree in hospital administration.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
-        <div class="ri-course-card" data-animate="fadeUp" data-delay="300">
+        <div class="ri-course-card" data-category="occupational-therapy" data-animate="fadeUp" data-delay="300">
           <div class="ri-course-img-wrap">
             <div class="ri-img-placeholder ri-course-img">
               <span>Course Image (320 × 200 px)</span>
@@ -515,7 +522,7 @@
             <span class="ri-course-tag">Occupational Therapy</span>
             <h5>BOT – Bachelor of Occupational Therapy</h5>
             <p>Help people regain independence and quality of life through occupational therapy.</p>
-            <a href="#apply" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
+            <a href="#admissionFormContainer" class="ri-course-apply">Apply Now <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#00b9ae" stroke-width="2" stroke-linecap="round"/></svg></a>
           </div>
         </div>
 
@@ -560,14 +567,13 @@
               Comfortable residential hostel
             </li>
           </ul>
-          <a href="#apply" class="ri-btn-primary mt-3">Schedule a Tour</a>
+          <a href="#admissionFormContainer" class="ri-btn-primary mt-3">Schedule a Tour</a>
         </div>
         <div class="col-12 col-lg-6 order-lg-1" data-animate="fadeRight">
-          <!-- CAMPUS IMAGE — 580×440px recommended -->
-          <div class="ri-img-placeholder ri-campus-img">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#00b9ae" stroke-width="1.5"/><path d="M8.5 11.5l2.5 2.5 4-4" stroke="#00b9ae" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Campus Image (580 × 440 px)</span>
-          </div>
+      
+          
+            <img src="./images/campus/campus.png" alt="campus" style="border-radius: 25px;">
+          
         </div>
       </div>
     </div>
@@ -632,13 +638,10 @@
             <p class="ri-rmc-text">
               Our students will be trained at Revathi Medical Center, our 300-bedded super specialty panel hospital. With cutting-edge medical equipment and highly qualified medical consultants in medical and surgical fields, RMC is a premier healthcare destination in the Tirupur region.
             </p>
-            <a href="#apply" class="ri-btn-white mt-2">Learn More</a>
+            <a href="#admissionFormContainer" class="ri-btn-white mt-2">Learn More</a>
           </div>
           <div class="col-12 col-lg-5 text-center" data-animate="fadeUp" data-delay="200">
-            <!-- RMC IMAGE — 420×300px recommended -->
-            <div class="ri-img-placeholder ri-rmc-img">
-              <span>RMC Hospital Image (420 × 300 px)</span>
-            </div>
+            <img src="./images/training/training.png" alt="training" style="border-radius: 25px;">
           </div>
         </div>
       </div>
@@ -672,16 +675,11 @@
         </div>
         <div class="col-12 col-lg-7" data-animate="fadeRight">
           <div class="ri-student-grid">
-            <!-- STUDENT LIFE IMAGES — 3 images recommended, 280×200px each -->
-            <div class="ri-student-img ri-student-img--lg ri-img-placeholder">
-              <span>Student Life Image 1 (380 × 260 px)</span>
-            </div>
-            <div class="ri-student-img ri-img-placeholder">
-              <span>Student Life Image 2 (280 × 190 px)</span>
-            </div>
-            <div class="ri-student-img ri-img-placeholder">
-              <span>Student Life Image 3 (280 × 190 px)</span>
-            </div>
+            <img src="./images/studentlife/student1.png" alt="Student" style="border-radius: 25px;">
+             <img src="./images/studentlife/student2.png" alt="Student" style="border-radius: 25px;">
+              <img src="./images/studentlife/student3.png" alt="Student" style="border-radius: 25px;">
+              <img src="./images/studentlife/student4.png" alt="Student" style="border-radius: 25px;">
+
           </div>
         </div>
       </div>

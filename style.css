@@ -142,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 .ri-about-img    { width: 100%; height: 360px; }
 .ri-campus-img   { width: 100%; height: 400px; }
 .ri-rmc-img      { width: 100%; max-width: 380px; height: 260px; margin: 0 auto; }
-.ri-course-img   { width: 100%; height: 190px; border-radius: var(--ri-radius) var(--ri-radius) 0 0; border-bottom: none; }
+.ri-course-img   { width: 100%; height: 210px; border-radius: var(--ri-radius) var(--ri-radius) 0 0; border-bottom: none; }
 
 /* ─── BUTTONS ─── */
 .ri-btn-primary {
@@ -689,16 +689,25 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--ri-shadow-lg);
   border-color: transparent;
 }
-.ri-course-img-wrap { overflow: hidden; }
+.ri-course-img-wrap { overflow: hidden; border-radius: var(--ri-radius) var(--ri-radius) 0 0; }
+.ri-course-img-wrap img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.45s ease;
+}
+.ri-course-card:hover .ri-course-img-wrap img { transform: scale(1.05); }
+
+/* fallback placeholder (shown while image loads or if JS is off) */
 .ri-course-img-wrap .ri-img-placeholder {
   border-radius: var(--ri-radius) var(--ri-radius) 0 0;
   border: none;
   background: var(--ri-teal-light);
   font-size: 12px;
+  height: 210px;
   transition: var(--ri-transition);
-}
-.ri-course-card:hover .ri-course-img-wrap .ri-img-placeholder {
-  transform: scale(1.04);
 }
 .ri-course-info {
   padding: 20px;
@@ -742,6 +751,37 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: auto;
 }
 .ri-course-apply:hover { gap: 10px; color: var(--ri-teal-mid) !important; }
+
+/* Course Category Tabs */
+.ri-course-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.ri-tab {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ri-navy);
+  background: var(--ri-light-gray);
+  border: 2px solid var(--ri-border);
+  border-radius: 50px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: var(--ri-transition);
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+.ri-tab:hover {
+  border-color: var(--ri-teal);
+  color: var(--ri-teal);
+}
+.ri-tab.active {
+  background: var(--ri-teal);
+  border-color: var(--ri-teal);
+  color: var(--ri-white);
+}
 
 /* CTA course card */
 .ri-course-card--cta {
@@ -1240,7 +1280,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 767.98px) {
   /* nav inner padding comes from the locked fluid container */
-  .ri-hamburger { display: flex; }
+  .ri-hamburger { display: flex; flex-shrink: 0; }
+  .ri-logo-wrap { flex-shrink: 1; min-width: 0; max-width: calc(100% - 60px); overflow: hidden; }
+  .ri-logo-wrap img { max-height: 40px; max-width: 100%; width: auto; }
+  .ri-logo-placeholder { padding: 4px 0 4px 10px; font-size: 13px; }
   .ri-nav-links {
     display: none;
     position: absolute;

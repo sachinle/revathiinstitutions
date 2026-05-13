@@ -19,6 +19,8 @@
     initCounters();
     initTestimonials();
     initBackToTop();
+    initCourseImages();
+    initCourseTabs();
   });
 
   /* ═══════════════════════════════════════════════════
@@ -238,6 +240,56 @@
     });
 
     startAuto();
+  }
+
+  /* ═══════════════════════════════════════════════════
+     COURSE CATEGORY TABS
+  ═══════════════════════════════════════════════════ */
+  /* ═══════════════════════════════════════════════════
+     COURSE IMAGES — inject category-based images
+  ═══════════════════════════════════════════════════ */
+  function initCourseImages() {
+    var imageMap = {
+      'physiotherapy':       './images/courses/Physiotherapy.jpg',
+      'paramedical':         './images/courses/Paramedical.jpg',
+      'nursing':             './images/courses/Nursing.jpg',
+      'management':          './images/courses/Management.jpg',
+      'occupational-therapy':'./images/courses/Occupational%20Therapy.jpg'
+    };
+
+    var cards = document.querySelectorAll('#coursesGrid .ri-course-card[data-category]');
+    cards.forEach(function (card) {
+      var src = imageMap[card.getAttribute('data-category')];
+      if (!src) return;
+      var wrap = card.querySelector('.ri-course-img-wrap');
+      if (wrap) wrap.innerHTML = '<img src="' + src + '" alt="" loading="lazy">';
+    });
+  }
+
+  function initCourseTabs() {
+    var tabs  = document.querySelectorAll('.ri-tab');
+    var cards = document.querySelectorAll('#coursesGrid .ri-course-card');
+
+    if (!tabs.length) return;
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var filter = tab.getAttribute('data-filter');
+
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+
+        cards.forEach(function (card) {
+          var cat = card.getAttribute('data-category');
+          var isCta = card.classList.contains('ri-course-card--cta');
+          if (filter === 'all' || isCta || cat === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
   }
 
   /* ═══════════════════════════════════════════════════
