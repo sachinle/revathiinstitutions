@@ -1,8 +1,6 @@
 /* ═══════════════════════════════════════════════════
-   REVATHI INSTITUTIONS — Landing Page Stylesheet
    Fonts: Merriweather (headings) + Nunito Sans (body)
    Palette: Navy #1a3a6e | Teal #00b9ae | White #fff | Light #f4f8ff
-   Bootstrap 4.0 | No FontAwesome — SVG only
 ═══════════════════════════════════════════════════ */
 
 /* ─── CSS VARIABLES ─── */
@@ -23,14 +21,11 @@
   --ri-radius:     12px;
   --ri-radius-lg:  20px;
   --ri-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Locked fluid layout — navbar inner, hero content, and every
-     body section share these so they shrink/grow in lock-step. */
   --ri-container-max: 1280px;
   --ri-container-pad: clamp(1rem, 3.2vw, 2rem);
 }
 
-/* ─── RESET & BASE ─── */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; overflow-x: hidden; }
@@ -48,14 +43,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 a { text-decoration: none; transition: var(--ri-transition); }
 
-/* ═══════════════════════════════════════════════════
-   LOCKED FLUID CONTAINER
-   Overrides Bootstrap's stepped .container widths so the
-   navbar inner + hero content + every body section share
-   the same max-width AND the same fluid side-padding.
-   When you resize the window, all three rails shrink and
-   grow as a single unit — no breakpoint "jumps".
-═══════════════════════════════════════════════════ */
+
 .container,
 .container-fluid,
 .container-sm,
@@ -72,8 +60,7 @@ a { text-decoration: none; transition: var(--ri-transition); }
   padding-right: var(--ri-container-pad);
 }
 
-/* Bootstrap rows produce horizontal overflow when nested in
-   our fluid container — clamp the negative margins. */
+
 .row {
   margin-right: -0.75rem;
   margin-left: -0.75rem;
@@ -485,9 +472,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Injection zone — no padding, let the injected form control its own spacing */
 .ri-form-inject-zone {
-  /* The injected form/script will render here.
-     Do NOT add padding or fixed height — let content define it.
-     Min-height shown as placeholder visual aid only (remove after injection): */
+  
   min-height: 320px;
   background: var(--ri-white);
 }

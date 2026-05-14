@@ -1,13 +1,4 @@
-/* ═══════════════════════════════════════════════════
-   REVATHI INSTITUTIONS — Landing Page JS
-   Features:
-   - Sticky navbar with scroll class
-   - Mobile nav toggle
-   - Scroll-triggered animations (IntersectionObserver)
-   - Animated counters
-   - Testimonial slider
-   - Back-to-top button
-═══════════════════════════════════════════════════ */
+
 
 (function () {
   'use strict';
@@ -119,10 +110,6 @@
     });
   }
 
-  /* ═══════════════════════════════════════════════════
-     ANIMATED COUNTERS
-     Usage: <span data-target="500" data-suffix="+">0</span>
-  ═══════════════════════════════════════════════════ */
   function initCounters() {
     var counters = document.querySelectorAll('.ri-stat-num[data-target]');
     if (!counters.length) return;
@@ -177,9 +164,7 @@
     requestAnimationFrame(step);
   }
 
-  /* ═══════════════════════════════════════════════════
-     TESTIMONIAL SLIDER
-  ═══════════════════════════════════════════════════ */
+
   function initTestimonials() {
     var cards    = document.querySelectorAll('.ri-testimonial-card');
     var dots     = document.querySelectorAll('.ri-dot');
@@ -242,12 +227,7 @@
     startAuto();
   }
 
-  /* ═══════════════════════════════════════════════════
-     COURSE CATEGORY TABS
-  ═══════════════════════════════════════════════════ */
-  /* ═══════════════════════════════════════════════════
-     COURSE IMAGES — inject category-based images
-  ═══════════════════════════════════════════════════ */
+ 
   function initCourseImages() {
     var imageMap = {
       'physiotherapy':       './images/courses/Physiotherapy.jpg',
@@ -305,9 +285,6 @@
     });
   }
 
-  /* ═══════════════════════════════════════════════════
-     BACK TO TOP
-  ═══════════════════════════════════════════════════ */
   function initBackToTop() {
     var btn = document.getElementById('backToTop');
     if (!btn) return;
