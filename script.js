@@ -10,7 +10,6 @@
     initCounters();
     initTestimonials();
     initBackToTop();
-    initCourseImages();
     initCourseTabs();
   });
 
@@ -228,24 +227,6 @@
   }
 
  
-  function initCourseImages() {
-    var imageMap = {
-      'physiotherapy':       './images/courses/Physiotherapy.jpg',
-      'paramedical':         './images/courses/Paramedical.jpg',
-      'nursing':             './images/courses/Nursing.jpg',
-      'management':          './images/courses/Management.jpg',
-      'occupational-therapy':'./images/courses/Occupational%20Therapy.jpg'
-    };
-
-    var cards = document.querySelectorAll('#coursesGrid .ri-course-card[data-category]');
-    cards.forEach(function (card) {
-      var src = imageMap[card.getAttribute('data-category')];
-      if (!src) return;
-      var wrap = card.querySelector('.ri-course-img-wrap');
-      if (wrap) wrap.innerHTML = '<img src="' + src + '" alt="" loading="lazy">';
-    });
-  }
-
   function initCourseTabs() {
     var tabs  = document.querySelectorAll('.ri-tab');
     var cards = document.querySelectorAll('#coursesGrid .ri-course-card');
