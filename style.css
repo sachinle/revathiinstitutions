@@ -286,6 +286,10 @@ h1, h2, h3, h4, h5, h6 {
   border-left-color: rgba(255,255,255,0.4);
   color: var(--ri-white);
 }
+.ri-logo-placeholder--footer img {
+  height: 52px;
+  width: auto;
+}
 .ri-nav-links {
   display: flex;
   align-items: center;
@@ -1236,6 +1240,14 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255,255,255,0.4);
   text-align: center;
   margin: 0;
+}
+.ri-footer-bottom p a {
+  color: var(--ri-teal);
+  text-decoration: none;
+  transition: var(--ri-transition);
+}
+.ri-footer-bottom p a:hover {
+  color: var(--ri-white);
 }
 
 /* ─── BACK TO TOP ─── */
