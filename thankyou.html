@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Revathi Institutions</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="./images/Revathi.png" type="image/png" />
+
+  <!-- Bootstrap 4.0 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Thank You Page ── */
+    .ty-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f4f8ff 0%, #e8f8f7 100%);
+      padding: 120px 20px 60px;
+    }
+
+    .ty-card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 12px 48px rgba(26, 58, 110, 0.13);
+      padding: 56px 48px 48px;
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+      animation: cardIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* ── Animated Checkmark ── */
+    .ty-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 28px;
+    }
+
+    .ty-icon svg { width: 100%; height: 100%; }
+
+    .ty-circle {
+      stroke-dasharray: 166;
+      stroke-dashoffset: 166;
+      stroke-width: 3;
+      stroke: #00b9ae;
+      fill: none;
+      animation: drawCircle 0.7s cubic-bezier(0.65, 0, 0.45, 1) 0.2s forwards;
+    }
+
+    .ty-circle-fill {
+      fill: #00b9ae;
+      opacity: 0;
+      animation: fillIn 0.4s ease 0.9s forwards;
+    }
+
+    .ty-check {
+      stroke-dasharray: 58;
+      stroke-dashoffset: 58;
+      stroke-width: 3.5;
+      stroke: #fff;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      animation: drawCheck 0.35s cubic-bezier(0.65, 0, 0.45, 1) 1.1s forwards;
+    }
+
+    @keyframes drawCircle {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes fillIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* ── Text ── */
+    .ty-title {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 30px;
+      font-weight: 900;
+      color: #1a3a6e;
+      margin-bottom: 14px;
+    }
+
+    .ty-sub {
+      font-size: 16px;
+      color: #6b7a90;
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .ty-sub strong {
+      color: #2d3748;
+    }
+
+    .ty-divider {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, #00b9ae, #1a3a6e);
+      border-radius: 2px;
+      margin: 0 auto 28px;
+    }
+
+    .ty-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #1a3a6e, #00b9ae);
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0, 185, 174, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ty-home-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 185, 174, 0.45);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .ty-card { padding: 40px 24px 36px; }
+      .ty-title { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════ NAVBAR (logo only) ═══════════════════════ -->
+  <nav class="ri-navbar scrolled" id="mainNav">
+    <div class="container-fluid ri-nav-inner">
+      <a href="index.html" class="ri-logo-wrap">
+        <div class="ri-logo-placeholder">
+          <img src="./images/Revathi_Institutions_Logo.png" alt="Revathi Institutions Logo">
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════ THANK YOU SECTION ═══════════════════════ -->
+  <div class="ty-wrap">
+    <div class="ty-card">
+
+      <!-- Animated success icon -->
+      <div class="ty-icon">
+        <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+          <circle class="ty-circle-fill" cx="26" cy="26" r="25"/>
+          <circle class="ty-circle" cx="26" cy="26" r="25"/>
+          <polyline class="ty-check" points="14,27 22,35 38,18"/>
+        </svg>
+      </div>
+
+      <h1 class="ty-title">Thank You!</h1>
+      <div class="ty-divider"></div>
+      <p class="ty-sub">
+        <strong>Your form has been submitted successfully.</strong><br>
+        Our team will review your details and<br>contact you shortly.
+      </p>
+
+      <a href="index.html" class="ty-home-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ FLOATING BUTTONS ═══════════════════════ -->
+  <div class="ri-float-btns">
+    <a href="tel:+919842202288" class="ri-float-btn ri-float-call" aria-label="Call Now">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+    </a>
+    <a href="https://wa.me/919342012096" class="ri-float-btn ri-float-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+
+</body>
+</html>

@@ -1235,32 +1235,20 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--ri-white);
 }
 
-/* ─── BACK TO TOP ─── */
+/* ─── BACK TO TOP (inside ri-float-btns) ─── */
 .ri-back-top {
-  position: fixed;
-  bottom: 28px; right: 28px;
-  width: 46px; height: 46px;
-  border-radius: 50%;
   background: var(--ri-teal);
-  color: var(--ri-white);
   border: none;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0 4px 16px rgba(0,185,174,0.4);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: var(--ri-transition);
-  z-index: 900;
+  display: none;
 }
 .ri-back-top.visible {
-  opacity: 1;
-  transform: translateY(0);
+  display: flex;
 }
 .ri-back-top:hover {
   background: var(--ri-teal-mid);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1350,3 +1338,39 @@ h1, h2, h3, h4, h5, h6 {
   .ri-form-shell { border-radius: var(--ri-radius); }
   .ri-college-card { margin-bottom: 20px; }
 }
+
+/* ═══════════════════════ FLOATING BUTTONS ═══════════════════════ */
+.ri-float-btns {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+}
+
+.ri-float-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ri-float-btn span { display: none; }
+
+.ri-float-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.32);
+  color: #fff;
+  text-decoration: none;
+}
+
+.ri-float-wa  { background: #25d366; }
+.ri-float-call { background: var(--ri-navy, #1a3a6e); }
